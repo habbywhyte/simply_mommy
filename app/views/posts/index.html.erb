@@ -1,0 +1,15 @@
+<div class= "new_post">
+  <h4><%= link_to "Add a Post", new_post_path %></h4>
+
+</div>
+
+
+<% @posts.each do |post| %>
+
+<div class = "post_wrapper">
+  <h2 class= "title"><%= link_to post.title, post %></h2>
+  <p class="date"><%= post.posted_on %></p>
+
+</div>
+
+<% end %>
