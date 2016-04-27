@@ -1,15 +1,28 @@
-<div id="post_container">
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-	  <%= link_to 'Delete', post_path(@post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+<div class="all_wrapper">
+  <div id="post_container">
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+  	  <%= link_to 'Delete', post_path(@post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
 
-  <h1 class="title"><%= @post.title %></h1>
-  <p class="date">
-    Posted on <%= @post.posted_on %>
+    <h1 class="title"><%= @post.title %></h1>
+    <p class="date">
+      Posted on: <%= @post.created_at.strftime("%B %e, %Y  %l:%M%p") %>
+    </p>
+    <h3 class="body"><%= @post.body %></h3>
 
-  </p>
-  <p class="body"><%= @post.body %></p>
+    <div id="comments_container">
+      <p><%= @post.comments.count %> Comments</p>
 
 
+      <% @post.comments.each do |comment| %>
+        <p class="comment_username"><strong><%= comment.username %></strong>   posted on: <%= comment.created_at.strftime("%B %e, %Y  %l:%M%p") %></p>
+        <p class="comment_title"><%= comment.title %></p>
+        <p class="comment_body"><%= comment.body %></p>
+      <% end %>
+
+        <h4>Add a comment:</h4>
+        <%= render 'comments/form' %>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,29 @@
+<%= simple_form_for ([@post, @post.comments.build]) do |f| %>
+  <%= f.input :username, placeholder: 'username' %>
+  <%= f.input :body, placeholder: 'comment' %>
+  <%= f.button :submit %>
+<% end %>
+
+
+<!-- <form>
+    <div class="form-group">
+      <label for="username" class="col-xs-4 control-label">Username</label>
+      <div class="col-xs-4">
+        <input type="text" class="form-control input-sm" id="username" placeholder="username">
+      </div>
+    </div>
+
+  <div class="form-group col-xs-4">
+    <label for="title">Title</label>
+    <input type="text" class="form-control input-sm" id="title" placeholder="title">
+  </div>
+
+  <div class="form-group">
+    <label for="body">Comment</label>
+    <div class="col-xs-4">
+      <input type="text" class="form-control input-sm" id="body" placeholder="comment">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-default btn-sm">Submit</button>
+</form> -->

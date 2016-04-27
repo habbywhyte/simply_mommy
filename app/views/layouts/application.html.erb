@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>SimplyMommy</title>
+   <link href='https://fonts.googleapis.com/css?family=Raleway:400,500|Poiret+One|Yesteryear' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,15 +13,20 @@
       <%= link_to "SimplyMommy", root_path, id: "logo" %>
       <nav>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home", root_path %>></li>
-          <li><%= link_to "Posts", posts_path %></li>
+          <li><%= link_to "Home", root_path, {style: "color: #fff"} %></li>
+          <li><%= link_to "Posts", posts_path, {style: "color: #fff"}%></li>
         </ul>
       </nav>
     </div>
   </header>
 
+
   <div class="container">
-<%= yield %>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+    <% end %>
+
+    <%= yield %>
 </div>
 
 </body>

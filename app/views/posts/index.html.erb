@@ -1,15 +1,16 @@
-<div class= "new_post">
-  <h4><%= link_to "Add a Post", new_post_path %></h4>
+<div class="all_wrapper">
+  <div class= "new_post">
+    <h4><%= link_to "Add a Post", new_post_path %></h4>
+  </div>
 
+  <h1>Latest Posts</h1>
+  <% @posts.each do |post| %>
+
+  <div class = "post_wrapper">
+    <h2 class= "title"><%= link_to post.title, post %></h2>
+    <p class="date">Posted on: <%= post.created_at.strftime("%B %e, %Y  %l:%M%p") %></p>
+
+  </div>
+
+  <% end %>
 </div>
-
-
-<% @posts.each do |post| %>
-
-<div class = "post_wrapper">
-  <h2 class= "title"><%= link_to post.title, post %></h2>
-  <p class="date"><%= post.created_at.strftime("%B %e, %Y  %l:%M%p") %></p>
-
-</div>
-
-<% end %>

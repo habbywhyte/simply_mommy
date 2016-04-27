@@ -14,8 +14,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @comment = @post.comments.build
     if @post.save
-      redirect_to @post, notice: "New post added!"
+      flash[:success] = "New post added!"
+      redirect_to @post
     else
       render :new
     end
@@ -29,7 +31,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(params[:post].permit(:title, :body))
-        redirect_to @post, notice: "Your post has been updated!"
+      flash[:success] = "Your post has been updated!"
+        redirect_to @post
       else
         render 'edit'
       end
@@ -39,6 +42,7 @@ class PostsController < ApplicationController
     @post= Post.find(params[:id])
 
     @post.destroy
+    flash[:success] = "Your post was successfully deleted."
     redirect_to posts_path
   end
 
