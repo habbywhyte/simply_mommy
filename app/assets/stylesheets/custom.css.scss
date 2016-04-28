@@ -118,6 +118,8 @@ border-bottom: 1px solid #e6e7e8;
 
 // modify buttons
 .btn.outline {
+    border: 2px solid #fff;
+    color: #fff;
     background: none;
     padding: 12px 22px;
     border: 0 none;
@@ -135,12 +137,14 @@ border-bottom: 1px solid #e6e7e8;
     color: #fff;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline:active, .open > .dropdown-toggle.btn-primary {
+    background: #ffffff;
+    color:#ffffff;
 }
 
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
     box-shadow: none;
 }
 // modify buttons

@@ -3,13 +3,13 @@
 
 <%= simple_form_for @user  do |f| %>
 
-<% if @user.errors.any? %>
-<div id='error-messages'>
-  <% @user.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-    <% end %>
-  </div>
-<% end %>
+  <% if @user.errors.any? %>
+    <div id='error-messages'>
+      <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
 
   <%= f.input :email, placeholder: 'user@domain.com', :input_html => {:style => 'width: 300px'} %>
   <%= f.input :password, placeholder: 'password', :input_html => {:style => 'width: 300px'} %>
