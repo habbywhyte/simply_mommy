@@ -15,6 +15,13 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path, {style: "color: #fff"} %></li>
           <li><%= link_to "Posts", posts_path, {style: "color: #fff"}%></li>
+
+          <% if current_user %>
+          Logged as: <%= current_user.email %>
+          <li><%= link_to "Log Out", signout_path, {style: "color: #fff"}%></li>
+          <% else %>
+          <li><%= link_to "Log In", signin_path, {style: "color: #fff"}%></li>
+          <% end %>
         </ul>
       </nav>
     </div>

@@ -1,0 +1,7 @@
+<h2>Log In</h2>
+
+<%= simple_form_for :signin, { url: signin_path } do |f| %>
+  <%= f.input :email, input_html: { name: "email" }, :input_html => {:style => 'width: 300px'} %>
+  <%= f.input :password, :input_html => {:style => 'width: 300px'} %>
+  <%= f.button :submit, "Sign In" %>
+<% end %>

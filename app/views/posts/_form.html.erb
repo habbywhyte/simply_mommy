@@ -1,50 +1,16 @@
-<!-- Be sure to have a copy of the Bootstrap stylesheet available on your
-  application, you can get it on http://getbootstrap.com/.
 
-  Inside your views, use the 'simple_form_for' with one of the Bootstrap form
-  classes, '.form-horizontal' or '.form-inline', as the following:
+<%= simple_form_for @post  do |f| %>
 
-    = simple_form_for(@user, html: { class: 'form-horizontal' }) do |form| -->
-
-
-
-<%= form_for(@post, html: {class: 'form-horizontal'}) do |f| %>
   <% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being created:</h2>
+    <div id='error-messages'>
+      <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+        <% end %>
+    </div>
   <% end %>
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-      <p><%= message %></p>
-      <% end %>
-    </ul>
-  </div>
 
-
-  <div class="form-group">
-    <%= f.label :username, class: 'col-sm-2 control-label'%>
-    <div class="col-sm-4">
-      <%= f.text_field :username, class:'form-control' %>
-    </div>
-  </div>
-  <br>
-  <div class="field form-group">
-    <%= f.label :title, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-4">
-      <%= f.text_field :title, class:'form-control' %>
-    </div>
-  </div>
-  <br>
-  <div class="field form-group">
-    <%= f.label :post, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-4">
-    <%= f.text_area :body, class:'form-control' %>
-    </div>
-  </div>
-  <br>
-  <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-4">
-      <%= f.submit %>
-    </div>
-</div>
+  <%= f.input :username, placeholder: 'username', :input_html => {:style => 'width: 300px'} %>
+  <%= f.input :title, :input_html => {:style => 'width: 300px'} %>
+  <%= f.input :body, :input_html => {:style => 'width: 300px'}, :input_html => {:rows => 7} %>
+  <%= f.button :submit %>
 <% end %>

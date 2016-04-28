@@ -4,6 +4,13 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post '/users' => 'users#create'
+  get "/signup" => "users#new"
+  get "/signin" => "sessions#new"
+  post "/signin" => "sessions#create"
+  get "/signout" => "sessions#destroy"
+
+
   root 'pages#home', id: 'home'
 
 end
