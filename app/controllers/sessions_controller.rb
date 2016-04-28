@@ -3,9 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:signin][:email])
+    puts user.inspect
     if user
-      if user.authenticate(params[:password])
+      if user.authenticate(params[:signin][:password])
         session[:user_id] = user.id
         flash[:success] = "Logged in as #{user.email}"
         redirect_to posts_path
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     flash[:success] = "Signed out!"
     redirect_to posts_path
-    
+
   end
 
 end
