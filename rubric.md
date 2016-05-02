@@ -17,4 +17,4 @@ Progressing/Performing - The deployed version of this application gets an error 
 Progressing - As it stands, all I have in the way of planning is some user stories. That said, there are some important aspects of planning that I'm sure you did but didn't document. Any ERD's and initial wireframes would be great in the planning folder. Additionally the readme could use some setup instructions as well as the ERD.
 
 ## Overall
-I'm really happy with the progress you've made from Unit 1 to Unit 2. Keep it up! There is still lots more to learn. I encourage you to keep working on this project and get it portfolio ready by the end of the course.
+I'm really happy with the progress you've made from Unit 1 to Unit 2. You seem to have the model CRUD down. Keep it up! The next steps are seeing how you can manipulate this structure/patterns to fit your own molds. There is still lots more to learn. I encourage you to keep working on this project and get it portfolio ready by the end of the course.
