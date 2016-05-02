@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  # nice job adding a user model, and resources look good.
   resources :posts do
     resources :comments
   end
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post "/signin" => "sessions#create"
   get "/signout" => "sessions#destroy"
 
-
+  ## was curious what the `id: 'home'` key/value pair does for root route.
   root 'pages#home', id: 'home'
 
   # resources :sessions

@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
+# looks good overall
+# I encourage you to look into how you can utilize your user model to authorize the ability edit/destroy posts.
+# As it stands now, any user can edit or destroy anything. It would be nice if they couldn't
+# and only the user that creates the post can edit/destroy it.
 
   def index
+    # :+1: for ordering! noice
     @posts = Post.all.order('created_at DESC')
   end
 
